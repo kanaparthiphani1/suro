@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SURO - Our Cultural Root</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="favicon_light.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=EB+Garamond:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img src="Logo_png.png" alt="SURO Logo" id="logo-img" />
+          </div>
+          <button
+            class="hamburger"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <nav class="nav">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#collection" class="nav-link">Collection</a>
+            <a href="#contact" class="nav-link">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <nav id="mobile-menu" class="mobile-nav">
+      <span
+        id="mobile-close"
+        class="close-x"
+        aria-label="Close menu"
+        tabindex="0"
+        >×</span
+      >
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#collection" class="nav-link">Collection</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to SURO</h1>
+        <p class="hero-subtitle">Our Cultural Root</p>
+      </div>
+      <div class="hero-overlay"></div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section id="about" class="offer-section">
+      <div class="container">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="offer-grid">
+          <div class="offer-card">
+            <div class="offer-icon">👗</div>
+            <h3 class="offer-title">Traditional Elegance</h3>
+            <p class="offer-text">
+              Beautifully crafted traditional Indian wear that celebrates our
+              rich heritage
+            </p>
+          </div>
+          <div class="offer-card">
+            <div class="offer-icon">✨</div>
+            <h3 class="offer-title">Modern Fusion</h3>
+            <p class="offer-text">
+              Contemporary designs that blend tradition with modern aesthetics
+            </p>
+          </div>
+          <div class="offer-card">
+            <div class="offer-icon">💎</div>
+            <h3 class="offer-title">Premium Quality</h3>
+            <p class="offer-text">
+              Carefully selected fabrics and meticulous craftsmanship in every
+              piece
+            </p>
+          </div>
+          <div class="offer-card">
+            <div class="offer-icon">🌺</div>
+            <h3 class="offer-title">Authentic Designs</h3>
+            <p class="offer-text">
+              Unique designs that reflect the beauty and diversity of Indian
+              culture
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section id="collection" class="coming-soon-section">
+      <div class="container">
+        <div class="coming-soon-content">
+          <h2 class="section-title">Something Beautiful is Coming</h2>
+          <p class="coming-soon-text">
+            We're putting the finishing touches on our collection. Stay tuned
+            for an exclusive launch that will celebrate the elegance of Indian
+            women's fashion.
+          </p>
+          <div class="coming-soon-highlight">
+            <p>Launching Soon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <img src="Logo_png.png" alt="SURO Logo" class="footer-logo-img" />
+          </div>
+          <div class="footer-contact">
+            <h4 class="footer-heading">Get in Touch</h4>
+            <a href="tel:+1234567890" class="contact-link">
+              <span class="contact-icon">📱</span>
+              <span>Call Us</span>
+            </a>
+          </div>
+          <div class="footer-social">
+            <h4 class="footer-heading">Follow Us</h4>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/the_suro_/"
+                class="social-link"
+                aria-label="Instagram"
+                target="_blank"
+                >Instagram</a
+              >
+              <!-- <a href="#" class="social-link" aria-label="Facebook">Facebook</a> -->
+              <a
+                href="https://www.youtube.com/@suro-world"
+                class="social-link"
+                aria-label="Youtube"
+                target="_blank"
+                >Youtube</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 SURO. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const mobileNav = document.getElementById("mobile-menu");
+      const body = document.body;
+      const mobileClose = document.getElementById("mobile-close");
+      function closeMenu() {
+        mobileNav.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        body.classList.remove("menu-open");
+      }
+      hamburger.addEventListener("click", function () {
+        const expanded = hamburger.getAttribute("aria-expanded") === "true";
+        hamburger.setAttribute("aria-expanded", expanded ? "false" : "true");
+        mobileNav.classList.toggle("open");
+        hamburger.classList.toggle("open");
+        if (!expanded) {
+          body.classList.add("menu-open");
+        } else {
+          body.classList.remove("menu-open");
+        }
+      });
+      document.querySelectorAll(".mobile-nav .nav-link").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+      if (mobileClose) {
+        mobileClose.addEventListener("click", closeMenu);
+        mobileClose.addEventListener("keydown", function (e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            closeMenu();
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
